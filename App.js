@@ -4,11 +4,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import MainScreen from './Components/MainScreen.js';
 import { AntDesign, Feather } from '@expo/vector-icons';
-import { NativeBaseProvider  } from 'native-base' ;   
 const Stack = createStackNavigator();
+
 function App() {
   return (
-    <NativeBaseProvider>
     <NavigationContainer >
       <Stack.Navigator>
         <Stack.Screen name="Hoe" component={MainScreen} options={{
@@ -21,7 +20,6 @@ function App() {
         }} />
       </Stack.Navigator>
     </NavigationContainer>
-    </NativeBaseProvider>
   );
 }
 

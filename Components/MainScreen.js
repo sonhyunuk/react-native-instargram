@@ -11,7 +11,7 @@ import { AntDesign, EvilIcons, Ionicons, MaterialCommunityIcons } from '@expo/ve
 const Tab = createMaterialTopTabNavigator();
 function MainScreen() {
     return (
-        <Tab.Navigator tabBarPosition={'bottom'} tabBarOptions={{
+        <Tab.Navigator  tabBarPosition={'bottom'} tabBarOptions={{
             showIcon: true, showLabel: false, activeTintColor: '#000', inactiveTintColor: '#d1cece',
             upperCaseLabel: false
         }}>
