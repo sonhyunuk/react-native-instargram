@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import CardComponent from '../CardComponent';
-import { Container, Content, Icon, Spinner, Thumbnail } from 'native-base';
+import { Container, Content, Icon, Thumbnail, Header, Left, Right, Body, Spinner } from 'native-base';
+import { backgroundColor } from 'styled-system';
 
 export default class HomeTab extends Component {
     state = {
@@ -69,6 +70,11 @@ export default class HomeTab extends Component {
     render() {
         return (
             <Container style={styles.container} >
+                <Header style={{backgroundColor : 'white' }}>
+                    <Left><Icon name='ios-camera' style={{ paddingLeft: 10 }} /></Left>
+                    <Body><Text style>Instagram</Text></Body>
+                    <Right><Icon name='ios-send' style={{ paddingRight: 10 }} /></Right>
+                </Header>
                 <Content>
                     {this.state.loading === true ?
                         (<Spinner />) :
