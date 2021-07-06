@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import CardComponent from '../CardComponent';
-import { Container, Content, Icon, Thumbnail, Header, Left, Right, Body, Spinner } from 'native-base';
-import { backgroundColor } from 'styled-system';
+import { Container, Content, Icon, Thumbnail, Header, Left, Right, Body, Spinner, Title } from 'native-base';
 
 export default class HomeTab extends Component {
     state = {
@@ -70,9 +69,9 @@ export default class HomeTab extends Component {
     render() {
         return (
             <Container style={styles.container} >
-                <Header style={{backgroundColor : 'white' }}>
+                <Header style={{ backgroundColor: 'white' }}>
                     <Left><Icon name='ios-camera' style={{ paddingLeft: 10 }} /></Left>
-                    <Body><Text style>Instagram</Text></Body>
+                    <Body><Text>Instagram</Text></Body>
                     <Right><Icon name='ios-send' style={{ paddingRight: 10 }} /></Right>
                 </Header>
                 <Content>
@@ -98,7 +97,8 @@ export default class HomeTab extends Component {
                                         paddingEnd: 5
                                     }}>
                                     {
-                                        this.state.following.map(following => <Thumbnail
+                                        this.state.following.map((following, index) => <Thumbnail
+                                            key={index}
                                             style={styles.thumbnail}
                                             source={{ uri: `https://steemitimages.com/u/${following}/avatar` }} />)
                                     }
